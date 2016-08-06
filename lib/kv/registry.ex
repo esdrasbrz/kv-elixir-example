@@ -26,6 +26,13 @@ defmodule KV.Registry do
         GenServer.cast server, {:create, name}
     end
 
+    @doc """
+    Stops the registry.
+    """
+    def stop(registry) do
+        GenServer.stop registry
+    end
+
     ## Server Callbacks
 
     def init(:ok) do
